@@ -1,0 +1,11 @@
+/* .cantSignUp {
+  background-color: rgb(204, 204, 204);
+  color: rgba(117, 117, 117);
+  border-color: rgba(152, 152, 152);
+} */
+
+/* 성공했을때 색깔 - 임시 */
+.canSignUp {
+  background-color: rgb(111, 163, 240);
+  cursor: pointer;
+}
