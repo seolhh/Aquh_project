@@ -1,0 +1,35 @@
+.feedWriteCard {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 50%;
+  height: 45%;
+  padding: 10px;
+  /* margin: 50px; */
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.feedTitle {
+  /* margin: 10px; */
+  width: 80%;
+}
+.feedTitleInput {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  width: 80%;
+}
+.feedContent {
+  /* margin: 10px; */
+}
+.feedContentInput {
+  padding: 5px;
+  resize: none; /* 사용자 임의 변경 불가 */
+  border-radius: 15px;
+  margin-bottom: 10px;
+  /* width: 98%;
+  height: 90%; */
+}
+.fileBox {
+  margin-bottom: 10px;
+}
