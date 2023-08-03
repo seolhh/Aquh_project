@@ -22,7 +22,7 @@ function RegisterForm() {
   const [validUserName, setValidUserName] = useState(false);
   const [validEmail, setValidEmail] = useState(false);
 
-  // 유효성 검사를 통한 메시지 발송
+  // 유효성 검사를 통한 사용가능 여부 메시지 발송
   const [nameMessage, setNameMessage] = useState("");
   const [userNameMessage, setUserNameMessage] = useState("");
   const [passwordMessage, setPasswordMessage] = useState("");
@@ -36,11 +36,11 @@ function RegisterForm() {
   });
 
   // 메시지 내용
-
   const onChangeName = (e) => {
     const currentName = e.target.value;
     setName(currentName);
 
+    // 이름 관련 유효성 검사
     const nameRegExp = /^[ㄱ-ㅎ가-힣a-zA-Z]{2,8}$/;
     if (!nameRegExp.test(currentName)) {
       setNameMessage("이름은 2~8글자 사이로 입력해주세요!");
@@ -56,6 +56,7 @@ function RegisterForm() {
 
     setUserName(currentUserName);
 
+    // 닉네임 관련 유효성 검사
     const usernameRegExp = /^(?=.*[a-z0-9가-힣])[a-z0-9가-힣]{3,10}$/;
     if (!usernameRegExp.test(currentUserName)) {
       setUserNameMessage(
@@ -68,6 +69,7 @@ function RegisterForm() {
     }
   };
 
+  // 비밀번호 관련 유효성 검사
   const onChangePassword = (e) => {
     const currentPassword = e.target.value;
     setPassword(currentPassword);
@@ -84,6 +86,7 @@ function RegisterForm() {
     }
   };
 
+  // 비밀번호 확인 유효성 검사
   const onChangePasswordConfirm = (e) => {
     const currentPasswordConfirm = e.target.value;
     setPasswordConfirm(currentPasswordConfirm);
@@ -95,7 +98,7 @@ function RegisterForm() {
       setIsPasswordConfirm(true);
     }
   };
-
+  //  이메일 관련 유효성 검사
   const onChangeEmail = (e) => {
     const currentEmail = e.target.value;
     setEmail(currentEmail);
@@ -110,6 +113,7 @@ function RegisterForm() {
       setIsEmail(true);
     }
   };
+
   // 닉네임 중복체크
   const nickNameCheckAxios = (e) => {
     axios
@@ -152,8 +156,8 @@ function RegisterForm() {
   };
   // 회원가입 가능 여부
   const signUpFunc = () => {
-    // 3가지 조건을 모두 확인
-    if (validUserName && validEmail && isPasswordConfirm) {
+    // 4가지 조건을 모두 확인
+    if (validUserName && validEmail && isPasswordConfirm && isName) {
       // axios 보내기 -> 회원정보 등록 api
       axios
         .post("http://172.20.10.2:8080/api/v1/member", {
@@ -167,7 +171,6 @@ function RegisterForm() {
           // 이메일 발송하기
           console.log(res);
           alert("24시간 이내에 회원님의 이메일에서 인증을 완료 해 주세요 !");
-          // 이거 이후에 어떻게 할건지? 메인페이지로 보내기?
         });
     } else {
       // alert("작성하신 내용을 다시 확인 해 주세요!");

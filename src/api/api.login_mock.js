@@ -15,6 +15,7 @@ login_mock.onPost("auth").reply((req) => {
     return [400, errorRes];
   }
   const res = {
+    // TODO : token .env 파일에 넣기
     access_token: "qoewnaldirjwlerierwleirurldks",
     refresh_token: "qoewnaldirjwleriqoeri1ik3134",
     member_number: 245,

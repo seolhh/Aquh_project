@@ -9,7 +9,7 @@ class FeedPage extends Component {
     return (
       <div className='FeedPage'>
         <FeedWrite />
-        <FeedList />
+        {/* <FeedList /> */}
       </div>
     );
   }

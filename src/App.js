@@ -8,6 +8,7 @@ import NotFound from "./ui/NotFound";
 import AuthPage from "./pages/AuthPage";
 import SignUpForm from "./users/SignUpForm";
 import RedirectPage from "./pages/RedirectPage";
+import FeedPage from "./pages/FeedPage";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       // TODO : SignupForm을 SignUpPage로 바꾸기.
       { path: "/signup", element: <SignUpForm /> },
       { path: "/main", element: <MainPage /> },
+      { path: "/feed", element: <FeedPage /> },
     ],
   },
 ]);
